@@ -18,7 +18,7 @@ class Traffic_Test:
         output_interface = 'enp5s0'
 
         file_to_send = os.path.join(file_path, file_name)
-        file_capture = os.path.join('/home/itay/noam/test_results', file_name)
+        file_capture = os.path.join('/home/noam/test_results', file_name)
 
         os.system("rm -rf %s" % (file_capture))
 
@@ -55,55 +55,3 @@ True)
 
 
 os.system("sudo kill $(pidof tcpdump")
-
-#
-# # DPI tests
-# Balance_HourTemp_Attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_Balance_Attack_Test.pcap')
-# Consistency_BatteryTemp_Attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_Consistency_Attack_Test.pcap')
-# Correlation_RPM_Velocity_Attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_Correlation_RPM_Velocity_Attack_Test.pcap')
-# Period_LaneInfoPDU_attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_Period_attack_Test.pcap')
-# range_counter_temperature_attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_range_counter_temperature_attack_Test.pcap')
-# range_limit_25hour_attack_Test = Traffic_Test('/home/itay/noam/DPI_Pcaps_from_Elital/', 'DPI_range_limit_25hour_attack_Test.pcap')
-# print('Finish_DPI_tests')
-#
-
-#
-# # Suricata tests
-#DOS_attack = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'DDOS_attack.pcap')
-#Icmp_smurf = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'Icmp_smurf.pcap'
-# ip_scan = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'ip_scan.pcap')
-# ping_flood = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'ping_flood.pcap')
-#ping_of_death = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'ping_of_death.pcap')
-#port_scan = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'port_scan.pcap')
-#tcp_flood = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'tcp_flood.pcap')
-#Teardrop = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'Teardrop.pcap')
-#udp_flood = Traffic_Test('/home/itay/noam/Alex_New_specific_files_to_attack/', 'udp_flood.pcap')
-# print('Finish_Suricata_tests')
-#
-
-# #
-# #
-# # Ethernet tests
-# L2_Header_Destination_MAC = Traffic_Test('/home/itay/noam/ETH/', '1_L2_Header_Destination_MAC.pcap')
-# L3_Header_Destination_IP = Traffic_Test('/home/itay/noam/ETH/', '2_L3_Header_Destination_IP.pcap')
-# L4_Header_Illegal_destination_service_port = Traffic_Test('/home/itay/noam/ETH/', '3_L4_Header_Illegal_destination_service_port.pcap')
-# L5_Header_Autosar_Service_ID = Traffic_Test('/home/itay/noam/ETH/', '4_L5_Header_Autosar_Service_ID.pcap')
-# L5_Header_SOME_IP_version = Traffic_Test('/home/itay/noam/ETH/', '5_L5_Header_SOME_IP_version.pcap')
-# L5_Header_DoIP_DoIP_entity = Traffic_Test('/home/itay/noam/ETH/', '6_L5_Header-DoIP_DoIP_entity.pcap')
-# ICMP_Smurf_Attack = Traffic_Test('/home/itay/noam/ETH/', '7_ICMP_Smurf_Attack.pcap')
-# arp_attack = Traffic_Test('/home/itay/noam/ETH/', '8_arp_attack.pcap')
-# print('Finish_Ethernet_tests')
-
-
-
-
-# #
-#
-# print('Finish_Suricata_tests)')
-#
-#
-# attack_packets.pcap = Traffic_Test('/home/itay/noam/ETH/', 'attack_packets.pcap')
-# print('Finish_Suricata_tests)')
-
-#
-# # basic_15_packets_test_without_Ping.pcap = Traffic_Test('/home/itay/noam/ETH/','basic_15_packets_test_without_Ping.pcap')

@@ -1,0 +1,1096 @@
+#   כל פונקציה שיש לה '_'  היא פונקציה "פנימית" , כל פונקציה ללא , יש לה API , החוצה. 
+#   _______________________________________
+#  
+#  class Buba:
+#      def __init__(self,sringo):
+#          self.stuff_to_print = sringo
+#          
+#      def bazz(self):
+#          print(self.stuff_to_print)
+#          return self
+#          
+#      def set_buzz(self,sringo):
+#          self.stuff_to_print = sringo
+#          return self
+#          
+#          
+#  if __name__ == "__main__":
+#      a = Buba("Noam")
+#     a.set_buzz("Alex").bazz()
+#  
+#  # _______________________________________
+#  
+#  
+#  Working with DB:
+#  import sqlite3
+#  import os
+#  import time
+#  
+#  # Connect to the database (creates the file if it doesn't exist)
+#  conn = sqlite3.connect('example.db')
+#  # Create a cursor object
+#  cursor = conn.cursor()
+#  # Create a table
+#  cursor.execute('''
+#  CREATE TABLE IF NOT EXISTS users (
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT,
+#     age INTEGER
+#  )
+#  ''')
+#  
+#  # Commit the changes and close the connection
+#  conn.commit()
+#  
+#  # -------------- enter values to db --------------------
+#  # Execute an INSERT query
+#  for i in range(10):
+#     cursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', ('John Doe', 0 + i))
+#     print(i)
+#  
+#  # -------------- update --------------------
+#  # Execute an UPDATE query
+#  cursor.execute('UPDATE users SET name = ? WHERE age = ?', ('new_name', 1))
+#  # Commit the changes
+#  conn.commit()
+#  
+#  cursor.execute('SELECT * FROM users')
+#  
+#  # -------------- print DB --------------
+#  # Fetch all the rows of data
+#  rows = cursor.fetchall()
+#  # Print the rows
+#  for row in rows:
+#     print(row)
+#  
+#  # -------------- delete DB --------------
+#  # Execute a DELETE query to clear all the data from the users table
+#  cursor.execute('DELETE FROM users')
+#  conn.commit()
+#  
+#  
+#  time.sleep(2)
+#  # closing the DB connection
+#  conn.close()
+#  
+#  # Delete the database file
+#  os.remove('example.db')
+#  
+#  
+#  # _______________________________________
+#  
+#  # ליצור סטטיק לא נדרש אינסטנס מהפונקציה המכילה אותה , היא בסה"כ יושבת שם.
+#  # שימוש בה לא דורש לייצר את האיניט של הקלאס שהיא יושבת בו.
+#  
+#  # Static methods do not have access to the class or instance. They are defined using the @staticmethod decorator and don't receive any special first argument like cls or self. They are used when a method doesn't need to access any class-specific state.
+#  # Class methods, on the other hand, are defined using the @classmethod decorator. They receive the class as the first argument, rather than an instance, and they can access the class and its attributes. Class methods are used when a method needs to access the class state, but not an instance state.
+#  
+#  # _______________________________________
+#  
+#  
+#  
+#  Here there is a need to perform 
+#  > git pull (to get the original from the network
+#  - to resolve all the conflicts locally (on your PC) 
+#  
+#  > git push  after conflict resolved.
+#  # _________________________________
+#  
+#  How to get a new random number each time reading for i using yield:
+#  
+#  import random
+#  
+#  class RandomParams:
+#      def r_param(self):
+#          for i in range(ADDITIONAL_LINES_DB):
+#              R_CA_ADDRESS = random.randint(0, 255)
+#              R_CA_NAME = bin(random.randint(0, 4096))
+#              R_HW_VERSION = random.randint(0, 255)
+#              R_SW_VERSION = str(random.randint(0, 255))
+#              R_PRM = (R_CA_ADDRESS, R_CA_NAME, R_HW_VERSION, R_SW_VERSION)
+#              yield R_PRM
+#  
+#  random_params = RandomParams()
+#  for R_PRM in random_params.r_param():
+#      print(R_PRM)
+#  
+#  _________________________________
+#  
+#  How to create an Object:
+#  
+#  class CanListener(unittest.TestCase):
+#  
+#      def test_can_listener(self):
+#  
+#  if __name__ == '__main__':
+#      can_listener = CanListener
+#      can_listener.test_can_listener()   # object creation
+#  
+#  _________________________________
+#  
+#  
+#  Git learning : https://www.youtube.com/watch?v=jbxQbwi89GU
+#  
+#  Cut a string in half:
+#  
+#  stringg = "WooHoo"
+#  
+#  def first_half(stringg):
+#    a = len(stringg)/2
+#    b = stringg[0:a:1] 
+#    return(b)
+#    
+#  first_half(stringg)
+#  
+#  _________________________________
+#  
+#  Remove a string in the beginning and in it’s end:
+#  
+#  stringg = ('Hello')
+#  
+#  def without_end(str):
+#     return(str[1:len(str)-1])
+#    
+#  without_end(stringg)
+#    
+#  _________________________________
+#  
+#  Day 1:
+#  print ('Day 1 - Python Print Function')
+#  print('The function is declared like this:')
+#  print("print('what to print')")
+#  The last print is dubble “” - so that to see the internal ‘’
+#  _ _ _ _
+#  print("Day 1 - String Manipulation")
+#  print("String Concatenation is done with the "+" sign.")
+#  print("e.g. print('Hello ' + 'world')")
+#  print(("New lines can be created with a backslash and n."))
+#  _ _ _ _
+#  user = input("What's your name ?\n")
+#  print ( len (user))
+#  _ _ _ _
+#  print(len(input('what is your name? ')))
+#  _ _ _ _
+#  c = a
+#  a = b
+#  b = c
+#  _ _ _ _
+#  print("hello world!\nHello world!") - twice with enter between
+#  print ("hello" + "Angela")
+#  _ _ _ _ 
+#  “Unexpected indent" lines not on the right spaces from start line
+#  _ _ _ _ 
+#  input() function
+#  input(“what is your name?”)
+#  _ _  _ _ 
+#  
+#  print(“hello” + input(“what is your name?”))   -  input(“what is your name?”)) == name entered
+#  _ _  _ _
+#  
+#  name = input(“what is your name?”)
+#  Print (name)
+#  Length = len(name)
+#  _ _ _ _ 
+#  
+#  print("hello world!\nHello world!") - twice with enter between
+#  print ("hello" + "Angela")
+#  _ _ _ _ 
+#  
+#  Cannot use variables with letter in the beginning , like 1lenght
+#  
+#  Int /  int - is a float if the answer is not without leftover
+#   
+#  Cannot concatenate a String with an integer
+#  
+#  
+#  _ _ _ _ _ 
+#  
+#  Tip calculator : 
+#  
+#  print("Welcome to the tip calculator!")
+#  total = float(input("What was the total bill? $"))
+#  tip = int(input("How much tip would you like to give? 10, 12, or 15? "))
+#  people = int(input("How many people to split the bill? "))
+#  tip_calculation = tip / 100 * total + total
+#  split_total = tip_calculation / people
+#  rounded = round(split_total, 2)
+#  message = f"Each person should pay: ${rounded}"
+#  print(message)
+#   _ _ _ _ _
+#  
+#  print("{:.2f}".format(amount_to_pay))
+#  
+#  This will print the result with 2 digits after the .xx
+#  
+#   _ _ _ _ _
+#  
+#  height = int(input("what is your height in CM?" ))
+#  
+#  Input that will be integer , and will be placed in variable Height
+#  
+#   _ _ _ _ _
+#  
+#  if height > 120:
+#     print ("you can ride the rollercoster!")
+#  else:
+#     print("sorry you cannot ride")
+#  
+#  If - then - else
+#  
+#  _ _ _ _ _
+#  if height >= 120:
+#  Greater than or equal 
+#  
+#  == equal to , != not Equal to 
+#  _ _ _ _ _
+#  
+#  
+#  7 % 3  = 3 + 3 + 1 =>> the result will be 1 (the remainder of the number)
+#  (31)
+#  
+#  _ _ _ _ _
+#  31. Indented python
+#  height = int(input("what is your height"))
+#  if height >= 120:
+#     print("you can ride the rollercoaster!")
+#     age = int(input("what is your age"))
+#     if age < 12:
+#         print("Please pay $5.")
+#     elif age <=18:
+#         print("Please pay $8.")
+#     else:
+#         print("Please pay $12.")
+#  else:
+#     print("sorry, you have to grow taller before you can ride")
+#  
+#  The code is looking for the first condition that catches  
+#  _ _ _ _ _
+#  row1 = ["", " ", " "]
+#  row2 = [" ", " ", " "]
+#  row3 = [" ", " ", " "]
+#  
+#  map = [row1,row2,row3]
+#  
+#  print(f"{row1}\n{row2}\n{row2}\n")
+#  position = input("where do you want to put the treasure?")
+#  
+#  # when receiving something from customer in print mode - it is an STR (need to pass to integer)
+#  
+#  hor = int(position[0])
+#  vert = int(position[1])
+#  
+#  print(hor, vert)
+#  # map[hor][vert] = ' X'
+#  
+#  # The selected_row is a specific list holding the line requested, then it is looking within this line for the specific row place:  
+#  selected_row = map[hor - 1]
+#  selected_row[vert - 1] = '\U0001F600'
+#  
+#  This line is the same as the last one:
+#  # =""=  == selected_row = map[hor - 1] [vert - 1] = '\U0001F600'
+#  
+#  print(f"{row1}\n{row2}\n{row3}\n")
+#  
+#  _ _ _ _ _
+#  fruits = ["Apple" , "Peach" ,"Pear"]
+#  for fruit in fruits:
+#  #     print(fruit)
+#     print(fruit + " pie")
+#  
+#  
+#  _ _ _ _ _
+#  Functions:
+#  
+#  def my_function():                # - define a function 
+#     print("starting function")
+#     num_char = len("hello")
+#     print(num_char)
+#  
+#  my_function()                     # - call the function 
+#  _ _ _ _ _
+#  for i in range (6):
+#  
+#  for number in range (2,10):
+#     print(number)
+#  _ _ _ _ _
+#  number = 5
+#  while number > 0:
+#     # jump()
+#     number -= 1
+#     print (number)
+#  _ _ _ _ _
+#  
+#  Greet each person in a function:: 
+#  
+#  def greet(a):	
+#     print("hello %s" % a)
+#     print("how do you do?")
+#     print("How is the weather ?")
+#  
+#  greet("angela")
+#  _ _ _ _ _
+#  def greet_with_name(name):
+#   print(f"hello {name}")
+#   print(f"how do you do {name}?")
+#   print(f"How is the weather {name} ?")
+#  
+#  
+#  greet_with_name('angela')
+#  _ _ _ _ _
+#  
+#  _ _ _ _ _
+#  
+#  def greet_with_name(name, age):
+#     print(f"hello {name}")
+#     print(f"you are {age} years old")
+#  
+#  
+#  greet_with_name('angela','26')
+#  _ _ _ _ _
+#  
+#  # The required code is provided below.
+#  # num = int (input (“Enter any number to test whether it is odd or even: “)
+#  # if (num % 2) == 0: print (“The number is even”)
+#  # else: print (“The provided number is odd”) Output: Enter any number to test whether it is odd or even: 887 887 is odd.
+#  _ _ _ _ _
+#  
+#  def my_function(a,b,c):
+#     # do a
+#     # do b   
+#     # do c
+#  
+#  my_function(3, 2, 1) 
+#  
+#  Arguments by location , will in inserted to the Parameters:
+#  =>>  a=3 , b= 2 , c=1
+#  _ _ _ _ _
+#  We can specify within a function what the Paramters to what Argumets (so not according to location)
+#  
+#  def my_function(a, b, c):
+#     # do a
+#     # do b
+#     # do c
+#  
+#  my_function(c=3, b=2, a=1)
+#  
+#  a=1 , b= 2 , c=3
+#  
+#  _ _ _ _ _
+#  Shift code:
+#  alfhabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' ]
+#  
+#  # User input:
+#  direction = input("type 'e' to enctypt, type 'd' to decrypt:\n")
+#  text = input ("Type your message:\n")
+#  shift =  int(input("Type the shift number:\n"))
+#  
+#  # logic:
+#  
+#  if direction == 'e':
+#     for l in range(0,len(text)):
+#         for i in range(0,len(alfhabet)):
+#             if text[l] == alfhabet[i]:
+#                 print(alfhabet[i+int(shift)], end ="")
+#  
+#  if direction == 'd':
+#     for l in range(0,len(text)):
+#         for i in range(0,len(alfhabet)):
+#             if text[l] == alfhabet[i]:
+#                 print(alfhabet[i-int(shift)], end ="")
+#  _ _ _ _ _
+#  מילון dictionary
+#  programming_dictionary = {
+#   "Bug": "An error in a program that prevents the program from running as expected.",
+#   "Function": "A piece of code that you can easily call over and over again.",
+#   "Loop":"The action of doing somehing over and over again.",
+#  }
+#  
+#  print(programming_dictionary["Bug"])
+#  _ _ _ _ _
+#  programming_dictionary = {
+#   "Bug": "An error in a program that prevents the program from running as expected.",
+#   "Function": "A piece of code that you can easily call over and over again.",
+#   "Loop":"The action of doing something over and over again.",
+#  }
+#  
+#  print(programming_dictionary["Bug"])
+#  programming_dictionary["new"] = "abcd"
+#  
+#  print(programming_dictionary)
+#  
+#  {'Bug': 'An error in a program that prevents the program from running as expected.', 'Function': 'A piece of code that you can easily call over and over again.', 'Loop': 'The action of doing something over and over again.', 'new': 'abcd'}
+#  _ _ _ _ _
+#  
+#  empty_dictionary = {} 
+#  programming_dictionary = {}                 -> clear dictionary
+#  programming_dictionary["new"] = "ha ha ha "   -> cledit existing dictionary
+#  
+#  _ _ _ _ _
+#  for key in programming_dictionary:
+#     print(programming_dictionary[key])
+#  _ _ _ _ _
+#  student_scores = {
+#   "Harry": 81,
+#   "Ron": 78,
+#   "Hermione": 99,
+#   "Draco": 74,
+#   "Neville": 62,
+#  }
+#  
+#  for names in student_scores:
+#     print(names)
+#     print(student_scores[names])
+#  
+#  Harry
+#  81
+#  Ron
+#  78
+#  Hermione
+#  99
+#  _ _ _ _ _
+#  
+#  travel_log = [
+#  {
+#    "country": "France",
+#    "visits": 12,
+#    "cities": ["Paris", "Lille", "Dijon"]
+#  },
+#  {
+#    "country": "Germany",
+#    "visits": 5,
+#    "cities": ["Berlin", "Hamburg", "Stuttgart"]
+#  },
+#  ]
+#  _ _ _ _ _
+#  How to append in .log:
+#  
+#    travel_log.append (new_country)
+#  _ _ _ _ _
+#  
+#  _ _ _ _ _
+#  
+#  travel_log = [
+#     {
+#         "country": "France",
+#         "visits": 12,
+#         "cities": ["Paris", "Lille", "Dijon"]
+#     },
+#     {
+#         "country": "Germany",
+#         "visits": 5,
+#         "cities": ["Berlin", "Hamburg", "Stuttgart"]
+#     },
+#  ]
+#  
+#  # 🚨 Do NOT change the code above
+#  
+#  # TODO: Write the function that will allow new countries
+#  # to be added to the travel_log. 👇
+#  
+#  def add_new_country(country_visited, times_visited, cities_visited):
+#     new_country = {}  # create empty directory
+#     new_country["country"] = country_visited
+#     new_country["visits"] = times_visited
+#     new_country["cities"] = cities_visited
+#     print("hello ! \n")
+#     travel_log.append(new_country)
+#  
+#  print(travel_log)
+#  
+#  # 🚨 Do not change the code below
+#  add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+#  
+#  print(travel_log)
+#  
+#  # to input to this string :   student_grades = {}
+#  
+#  # 🚨 Don't change the code below 👇
+#  print(student_grades)
+#  
+#  _ _ _ _ _
+#  
+#  There is no add() , append() , or insert() method you can use to add an item to a dictionary in Python. Instead, you add an item to a dictionary by inserting a new index key into the dictionary, then assigning it a particular value
+#  _ _ _ _ _
+#  
+#  _ _ _ _ _
+#  a = 0
+#  b = 10
+#  
+#  name = 'abc'
+#  
+#  for i in range (a,b):
+#     new_bid[i] = i
+#  
+#  print(new_bid)
+#  _ _ _ _ _
+#  
+#  del my_dict['key']
+#  _ _ _ _ _
+#  
+#  from replit import clear
+#  from art import logo
+#  
+#  print(logo)
+#  
+#  bids = {}
+#  bidding_finished = False
+#  
+#  
+#  def find_highest_bidder(bidding_record):
+#     highest_bid = 0
+#     winner = ""
+#     # bidding_record = {"Angela": 123, "James": 321}
+#     for bidder in bidding_record:
+#         bid_amount = bidding_record[bidder]
+#         if bid_amount > highest_bid:
+#             highest_bid = bid_amount
+#             winner = bidder
+#     print(f"The winner is {winner} with a bid of ${highest_bid}")
+#  
+#  
+#  while not bidding_finished:
+#     name = input("What is your name?: ")
+#     price = int(input("What is your bid?: $"))
+#     bids[name] = price
+#     should_continue = input("Are there any other bidders? Type 'yes or 'no'.\n")
+#     if should_continue == "no":
+#         bidding_finished = True
+#         find_highest_bidder(bids)
+#     elif should_continue == "yes":
+#         clear()
+#  
+#  """
+#  FAQ: My console doesn't clear()
+#  
+#  This will happen if you’re using an IDE other than replit.
+#  I’ll cover how to use PyCharm in Day 15. That said, you can write your own clear() function or configure your IDE like so:
+#  
+#  https://www.udemy.com/course/100-days-of-code/learn/lecture/19279420#questions/16084076
+#  
+#  """
+#  _ _ _ _ _
+#  def calculator (num_1  , num_2 , operation):
+#     if operation == '+':
+#         print ("-> I am in + option ! ")
+#         c = int(num_1) + int(num_2)
+#         return c
+#  
+#  
+#  num_1 = input("please enter first number:")
+#  num_2 = input("please enter second number:")
+#  operation = input ("what is the operation ? + , -  / *")
+#  
+#  
+#  print(calculator (num_1  , num_2 , operation))
+#  _ _ _ _ _
+#  
+#  
+#  מפרמט את האותיות הראשונות להיות capital
+#  def format_name(f_name , l_name):
+#     print(f"{f_name}{l_name}")
+#     return (f_name.title(), l_name.title())
+#  
+#  f_name = input("please enter first name : ")
+#  l_name = input("please enter second name:")
+#  
+#  print(format_name(f_name,l_name))
+#  _ _ _ _ _
+#   סיום הפונקציה , כל מה שאחריה לעולם לא יבוצע Return   
+#  _ _ _ _ _
+#  if (something in function is not right):
+#  	return 
+#    - this is just to leave the function if something is not right 
+#  
+#  _ _ _ _ _
+#  בודק האם השנה צריכה להיות מעוברת או לא : (פברואר הוא 29 ימים … 
+#  
+#  def is_leap(year):
+#     if year % 4 == 0:
+#         if year % 100 == 0:
+#             if year % 400 == 0:
+#                 return True
+#             else:
+#                 return False
+#         else:
+#             return True
+#     else:
+#         return False
+#  
+#  
+#  def days_in_month(year,month):
+#     if month >12 or month<1:
+#         return "Invalid month"
+#     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#     if is_leap(year) and month == 2:
+#         return 29
+#     return month_days[month-1]
+#  
+#  # 🚨 Do NOT change any of the code below
+#  year = int(input("Enter a year: "))
+#  month = int(input("Enter a month: "))
+#  days = days_in_month(year,month)
+#  print(days)
+#  _ _ _ _ _
+#  
+#  הערות על מה הפונקציה עושה , בשביל שימוש עתידי , ודוקומנטציה :
+#  
+#  _ _ _ _ _
+#  Creating a deadlock on the program (function calling itself):
+#  
+#  def calculator():
+#     print('hello')
+#     calculator()
+#  
+#  calculator()
+#  _ _ _ _ _
+#  
+#  player_health = 10
+#  
+#  def drink_potion():
+#     player_health = 20
+#     print('player health in function:', player_health)
+#  
+#  drink_potion()
+#  
+#  print('player health out of function:', player_health)
+#  
+#  player health in function: 20
+#  player health out of function: 10
+#  
+#  
+#  
+#  _ _ _ _ _
+#  
+#  Global parameter (player_health):
+#  player_health = 10
+#  
+#  def drink_potion():
+#    potion_strengh = 2  - this is a local variable 
+#    print('player health in function:', player_health)
+#  
+#  drink_potion()
+#  
+#  print('player health out of function:', player_health)
+#  
+#  player health in function: 10
+#  player health out of function: 10
+#  Global variables are available in every function no matter how deep it gets nested 
+#  Part of ‘Namespace’ apply in certain scopes , apply to everything you name
+#  _ _ _ _ _
+#  
+#  Global parameters
+#  
+#  def function():
+#  	local parameters
+#  
+#  If you create a variable with a function - it is only available within this function
+#  
+#  _ _ _ _ _
+#  enemies = "skeleton"
+#  
+#  def increase_enemies():
+#     enemies = "Zombie"
+#     print(f"enemies in function: {enemies}")
+#  
+#  increase_enemies()
+#  print(f'enemies out of function: {enemies}')
+#  
+#  enemies in function: Zombie
+#  enemies out of function: skeleton
+#  These are 2 different parameters (they just have the same name) 
+#  
+#  _ _ _ _ _
+#  
+#  enemies = 1
+#  print(f'enemies out of function: {enemies}')
+#  
+#  def increase_enemies():
+#     global enemies
+#     enemies += 1
+#     print(f"enemies in function: {enemies}")
+#  
+#  increase_enemies()
+#  print(f'enemies out of function: {enemies}')
+#  
+#  This is how we change a global parameter
+#  This is not good to change it within a function 
+#  _ _ _ _ _
+#  enemies = 1
+#  
+#  print(f'enemies out of function: {enemies}')
+#  
+#  def increase_enemies():
+#     print(f"enemies in function: {enemies}")
+#     return enemies +1
+#  
+#  enemies = increase_enemies()
+#  print(f'enemies out of function: {enemies}')
+#  
+#  Here we return a new value of ‘enemies’ and update the value globally. 
+#  
+#  _ _ _ _ _
+#  
+#  
+#  השמות כאן הם ספציפיים לאובייקט מסויים (במקרה שלנו למלצר)
+#  
+#  
+#  _ _ _ _ _
+#  
+#  
+#  
+#  
+#  כאן ישנם 2 קבצים , בקובץ הראשון מגדירים משתנה, ובקובץ השני עושים לו import  , ומשתמשים במשתנים שלו עם '.' :
+#  print(another_module.another_veriable)
+#  
+#  _ _ _ _ _
+#  
+#  
+#  יש אפשרות לעשות import  ל
+#  import turtle
+#  timmy = turtle.Turtle() # tappet into the model and imported the class Turtle , and create an object called timmy
+#  
+#  לעשות import  ל Class עצמו מהמודל עצמו , ואז ניתן יהיה להשתמש בו ספציפית (לא נדרשת הנקודה)
+#  
+#  from turtle import Turtle
+#  timmy = Turtle()        # here we import the Class Turtle , so we can use it without the '.'
+#  
+#  Object .attribute:
+#  car.speed
+#  
+#  Object.Method
+#  car.stop()
+#  _ _ _ _ _
+#  
+#  How to install python packages:
+#  
+#  file -> setting -> project <local_name> -> Python Interpreter -> select '+' 
+#  _ _ _ _ _
+#  In order to see the source code , of what was imported: 	
+#  right click on “import prettytable” -> select ‘goto’ -> select ‘implementations’	
+#  See all the code that was written for it. 
+#  We need to view only the Tutorial written for it  https://pypi.org/project/prettytable/
+#  
+#  
+#  _ _ _ _ _
+#  
+#  The ‘C’ stands for Class 
+#  It is auto recognized by Pycharm as a Class
+#  
+#  _ _ _ _ _
+#  מטודות הם פונקציות בתוך קלאס 
+#  
+#  
+#  _ _ _ _ _
+#  לאובייקטים יש אטריביוטס (משתנים שמאוחסנים לכל אובייקט)
+#  
+#  Objects have Attributes (variables stored inside an object)  
+#  
+#  
+#  _ _ _ _ _
+#  אובייקט self , הוא אובייקט מיוחד , הוא מחזיק את הייחוס של בין האובייקט לפרמטרים שלו:
+#  
+#  זה מאפשר למטודה לשנות את האטריביוט של האובייקט
+#  This allows the method to change the attribute of the message
+#  
+#  The attributes are the things that the Object will have, they are variables that are associated with the final object.
+#  
+#  _ _ _ _ _
+#  
+#  Constructor - specify what should happen when our object is been constructed = initializing an object 
+#  Set values to there staring values:
+#  
+#  Self - is the actual object that is been created , or been initialized 
+#    
+#  _ _ _ _ _
+#  class Car():
+#     def __init__(self, user_id, username):  ,- this is a Contractor
+#         self.id = user_id
+#         self.username = username
+#         # initialise attributes
+#  
+#  
+#  my_car = Car(4, 'hello')
+#  
+#  print(my_car.id)
+#  print(my_car.username)
+#  
+#  # Self.attributes = parameter
+#  
+#  The self is connected to the Object ! it is what matters ! and printed 
+#  _ _ _ _ _
+#  import turtle_abdkfogf_fjdij_s_sd hsduis as turtle
+#  
+#  tim = t
+#  
+#  alias name  , it replaces the full imported module name
+#  _ _ _ _ _
+#  
+#  import turtle as t 
+#  tim = t.Turtle()
+#  
+#  This is a new way to use turtle (writing t instead of turtle)
+#  _ _ _ _ _
+#  
+#  Turtle is part of the Python library packeted - for more we need to install an outdoor packages.  
+#  So our final project is not a very big project when we are done, we import only what we need:
+#  import heroes   # import hero names ( need to be installed) 
+#  print(heroes.gen()) # prints a heroes name generated 
+#  _ _ _ _ _
+#  from turtle import Turtle, Screen
+#  import time
+#  
+#  tim = Turtle()
+#  tim.shape("turtle")
+#  tim.color("blue")
+#  
+#  for trip in range(4):
+#     tim.forward(100)
+#     tim.right(90)
+#     time.sleep(1)
+#  Make a square using Turtle
+#  _ _ _ _ _
+#  Documentation on Turtle:
+#  https://docs.python.org/3.3/library/turtle.html
+#  _ _ _ _ _
+#  colors = ("yellow", "gold", "orange", "red", "maroon", "violet", "magenta")
+#  
+#  for count in range(0, 15):
+#     tim.color(color_list[count])
+#     for _ in range(x + count):
+#         tim.right(360/(x+count))
+#         tim.forward(50)
+#         print('x', x)
+#         print('angle', 360/(x+count))
+#  
+#  Make a multiple shape figure:
+#  
+#  
+#  def draw_shape(num_sides):
+#     angle = 360 / num_sides
+#     for _ in range(num_sides):
+#         tim.forward(100)
+#         tim.right(angle)
+#  
+#  for shap_side_n  in range(3,11):
+#     tim.color(random.choice(colors))
+#     draw_shape(shap_side_n)
+#  
+#  Same this but with functions
+#  _ _ _ _ _
+#  
+#  direction = [0, 90, 180, 270]
+#  tim.pensize(3)
+#  tim.speed("fastest")
+#  
+#  for _ in range(200):
+#     tim.color(random.choice(colors))
+#     tim.forward(30)
+#     tim.setheading(random.choice(direction))
+#  
+#  Random drawing lins  
+#  _ _ _ _ _
+#  
+#  my_tuple = (1, 3, 8)
+#  print(my_tuple[0])
+#  
+#   A tuple is curven in stone - cannot be changed in any way !! it is immutable 
+#  _ _ _ _ _
+#  
+#  Change tuple to a list:
+#  tuple_to_list = list(my_tuple)
+#  print(tuple_to_list)
+#  _ _ _ _ _
+#  Filter an image to its RGB colors: 
+#  
+#  import colorgram
+#  
+#  # Extract 6 colors from an image.
+#  colors = colorgram.extract('cologram_test_pic.jpg', 100)
+#  
+#  color_palette = []
+#  
+#  for count in range(len(colors)):
+#     rgb = colors[count]
+#     color = rgb.rgb
+#     color_palette.append(color)
+#  
+#  print (color_palette)
+#  
+#  _ _ _ _ _
+#  מקבל Key  ומעדכן Value חדש
+#  _ _ _ _ _
+#  
+#  File path: 
+#  
+#  Absolute - full file path   
+#  Realpath - relative paths 
+#  looking for the written file within the current directory.
+#  does Not start with a ‘/’
+#  ‘../’ - from a directory to it’s parent
+#  using ‘.’ is the current working directory
+#  ‘~’ relative to your own home directory
+#  
+#  __file__ is a Python built-in. It yields the absolute path of the current executing script.
+#   
+#  _ _ _ _ _
+#  הגדרה בפונקציה , האם להדפיס לוגים או לא:
+#  
+#  def abcd (print_all=false):
+#  
+#  
+#  	if print_all:
+#  	print("all_files+ str(all_files)
+#  
+#  _ _ _ _ _
+#  Dictionary:
+#  
+#  d = {}
+#  s = 'dabaxyddab'
+#  
+#  for i in range(len(s)):
+#     if s[i] not in d:
+#         d[str(i)]=s[i]
+#  print(d, "\n")
+#  
+#  for k, v in d.items():
+#     print(k, v)
+#  
+#  _ _ _ _ _
+#  בשביל להחזיר ערך של פונקציה , צריך להכניס את הקריאה לפונקציה לתוך משתנה:
+#  x = read_file(fpath)
+#  
+#  print('function returns : ', x)
+#  
+#  _ _ _ _ _
+#  
+#  
+#  ## - create a random password:
+#  
+#  import random
+#  
+#  letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+#  numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+#  symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+#  
+#  print("Welcome to the PyPassword Generator!")
+#  nr_letters= int(input("How many letters would you like in your password?\n"))
+#  nr_symbols = int(input(f"How many symbols would you like?\n"))
+#  nr_numbers = int(input(f"How many numbers would you like?\n"))
+#  
+#  password = []
+#  
+#  for char in range(1,nr_letters+1):
+#        password.append(random.choice(letters))
+#  for char in range(1,nr_symbols+1):
+#        password += random.choice(numbers)
+#  for char in range(1,nr_numbers+1):
+#        password += random.choice(symbols)
+#  
+#  print(password)
+#  random.shuffle(password)
+#  for i in range(0,len(password)):
+#        print(password[i],end = '')
+#  print()
+#  print(", ".join(password))
+#  
+#  _ _ _ _ _
+#  
+#  
+#  from infrastructure.utils.test_status import TestsStatus
+#  
+#  
+#  
+#  
+#  _ _ _ _ _
+#  
+#  _ _ _ _ _
+#  FizzBuzz:  (lesson 55) :
+#  for i in range(100):
+#      if (i % 3 == 0) and (i % 5 == 0):
+#          print ("FizzBuzz")
+#      elif i % 3 == 0:
+#          print("Fizz")
+#      elif i % 5 == 0:
+#          print("Buzz")
+#      else:
+#          print(i)
+#  
+#  
+#  _ _ _ _ _
+#  
+#  Static method , is a method that doesn't return anything:
+#  
+#  class CanInfra:
+#      @staticmethod
+#      def can_listener():
+#  
+#  When the () are empty , and nothing is returned (something) , then there is a need for @staticmethod
+#  It also means that no Object is created from this method.
+#  
+#  _ _ _ _ _
+#  
+#  
+#  
+#  Opening a sub process that is run in the “backround”
+#  
+#  _ _ _ _ _
+#  
+#  """ This class is responsible for storing info during running  """
+#  
+#  
+#  class ListenerData:
+#      __data = list()
+#  
+#      @classmethod
+#      def get_data(cls):
+#          return cls.__data
+#  
+#  _ _ _ _ _
+#  
+#  Working with threads:
+#      event_transmit = Event()
+#      event_stop = Event()
+#      listener_thread = Thread(target=CanInfra.can_listener, args=(event_stop, ), daemon=True)
+#      listener_thread.start()
+#      TrafficGen.transmit(event_transmit)
+#      event_transmit.wait()
+#      time.sleep(2)
+#      event_stop.set()
+#      listener_thread.join()
+#  
+#  _ _ _ _ _
+#  
+#  Send a J1939 message : 
+#  
+#          ecu = j1939.ElectronicControlUnit()     # ECU create
+#          ecu.connect(bustype='socketcan', channel='vcan0')  # ECU connect to BUS
+#  
+#          ca = j1939.ControllerApplication(name, MY_ADDR)  # creating a CA 
+#          ecu.add_ca(controller_application=ca)   # connecting a CA to bus
+#          
+#          ca.start()       # starting a CA 
+#          time.sleep(2)
+#  
+#          str_data = 'ARL-J1939_Sim_VIN'    
+#          data = [ord(s) for s in str_data]
+#          source = 255
+#          pd = 0xEE
+#          ca.send_pgn(0, pd, source, 6, data)   # sending a CA J1939 message 
+#  
+#  
+#  _ _ _ _ _
+#  
+#  
+#  
+#  # - comment - the PC will ignore
+#  
+#  _ _ _ _ _
+#  Pip3 install <needed packedge>
+#  _ _ _ _ _
+#  
+#  Day 4 : 
+#  print("Welcome to the Band Name Generator.")
+#  street = input("What's name of the city you grew up in?\n")
+#  pet = input("What's your pet's name?\n")
+#  print("Your band name could be " + street + " " + pet)
+	
